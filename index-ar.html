@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>المخترع الصغير — الصفحة الرئيسية</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style-ar.css">
+</head>
+<body>
+  <header role="banner">
+    <div class="header-inner">
+      <div class="brand">
+        <!-- Replace the src with your English logo file (e.g. assets/logo-en.png) -->
+        <img src="piic/logo.png"alt="Young Inventor logo">
+        <h1 >المخترع الصغير</h1>
+      </div>
+      <nav role="navigation" aria-label="Main navigation">
+        <a href="index-ar.html">الصفحة الرئيسية</a>
+        <a href="curriculum-ar.html">مناهجنا</a>
+        <a href="products-ar.html">منتجاتنا</a>
+        <a href="blog-ar.html">المدونة</a>
+        <a href="#contact">اتصل بنا</a>
+      </nav>
+       <div class="header-balance"></div>
+      <nav role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="lang-btn ">English</a>
+        <a href="index-ar.html" class="lang-btn active ">العربية</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site" id="home">
+    <!-- قسم البطل -->
+    <section class="hero" aria-label="البطل">
+      <div class="hero-left">
+        <h2>المخترع الصغير</h2>
+        <p>تجارب عملية في العلوم والتكنولوجيا والهندسة والرياضيات ومشاريع إبداعية تمكن الأطفال من الاستكشاف والتجربة والاختراع. مناسب للأعمار من 6 إلى 12 سنة.</p>
+        <button class="cta" id="ctaBtn">اكتشف المزيد</button>
+      </div>
+      <div class="hero-illus" aria-hidden="true">
+        <img src="piic/pic1-homepage.png" alt="رسم توضيحي لأطفال يقومون بالتجارب">
+      </div>
+    </section>
+
+    <!-- حول -->
+    <section class="about" id="about">
+      <div class="text">
+        <h3>حولنا</h3>
+        <p>المخترع الصغير هو منصة تعليمية تمكن الأطفال بالمهارات والإبداع الذي يحتاجونه ليصبحوا مفكرين مبتكرين. نجمع بين الأدوات العملية والدروس الموجهة والإرشاد لجعل تعلم العلوم والتكنولوجيا والهندسة والرياضيات ممتعًا ولا يُنسى.</p>
+      </div>
+      <div class="illus">
+        <img src="piic/pic2-homepage.png" alt="فتاة تحمل ترس" style="max-width:100%;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.06); transition: transform 0.5s ease, box-shadow 0.5s ease;">
+      </div>
+    </section>
+
+    <!-- الرؤية والأهداف -->
+    <section id="vision">
+      <h3 style="font-size:32px;color:#9cca3f;margin:6px 0 18px;text-align:right">رؤيتنا وأهدافنا</h3>
+      <div class="vision">
+        <div class="card">
+          <div style="font-size:34px;margin-bottom:10px"><img src="piic/pic3-homepage.png" alt=""></div>
+          <h4>رؤيتنا</h4>
+          <p>إلهام وتجهيز الأطفال ليكونوا فضوليين، مبدعين، وحلالين للمشكلات - مستعدين لتشكيل مستقبل أفضل.</p>
+        </div>
+        <div class="card">
+          <div style="font-size:34px;margin-bottom:10px"><img src="piic/pic4-homepage.png" alt=""></div>
+          <h4>أهدافنا</h4>
+          <p>تعزيز حب التعلم والابتكار مدى الحياة من خلال المشاريع الممتعة، والاكتشاف الموجه، والتحديات المجتمعية.</p>
+        </div>
+        <div class="card">
+          <div style="font-size:34px;margin-bottom:10px"><img src="piic/pic5-homepage.png" alt=""></div>
+          <h4>كيف نفعل ذلك</h4>
+          <p>من خلال الجمع بين الدروس المتناسقة مع المناهج، والأدوات العملية، والدعم عبر الإنترنت للآباء والمعلمين.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- اتصل بنا -->
+    <footer id="contact">
+      <div class="site" style="padding:24px 48px 48px">
+        <div class="footer-inner">
+          <div>
+            <strong>اتصل بنا</strong>
+            <div class="muted">khaled.ahmad.hasan@gmail.com</div>
+          </div>
+          <div class="socials" aria-hidden="false">
+            <a href="#" aria-label="فيسبوك">ف</a>
+            <a href="#" aria-label="إنستغرام">إن</a>
+            <a href="#" aria-label="تويتر">ت</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // حالة تحميل CTA
+    const cta = document.getElementById('ctaBtn');
+    cta.addEventListener('click', function(){
+      cta.classList.add('loading');
+      const prev = cta.textContent;
+      cta.textContent = 'جاري التحميل...';
+      setTimeout(()=>{
+        cta.textContent = prev;
+        cta.classList.remove('loading');
+        // التمرير السلس إلى قسم "حول"
+        document.getElementById('about').scrollIntoView({behavior:'smooth'});
+      },900);
+    });
+
+    // التحقق من صحة النموذج (إذا أضفت نموذجًا لاحقًا)
+    function validateForm(form){
+      const inputs = form.querySelectorAll('[required]');
+      let ok = true;
+      inputs.forEach(i=>{ if(!i.value.trim()){ i.style.outline='2px solid #FF6B35'; ok=false;} else { i.style.outline='none'; }});
+      return ok;
+    }
+  </script>
+</body>
+</html>

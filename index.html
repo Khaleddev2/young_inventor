@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Young Inventor — Home</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css\index.css">
+  <link rel="stylesheet" href="css/base.css">
+
+</head>
+<body>
+  <header role="banner">
+    <div class="header-inner">
+      <div class="brand">
+        <!-- Replace the src with your English logo file (e.g. assets/logo-en.png) -->
+        <img src="piic/logo.png"alt="Young Inventor logo">
+        <h1 >Young Inventor</h1>
+      </div>
+      <nav role="navigation" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="Our Curriculum.html">Our curriculum</a>
+        <a href="Our Products.html">Our products</a>
+        <a href="blog.html">Blog</a>
+        <a href="#contact">Contact us</a>
+
+      </nav>
+       <div class="header-balance"></div>
+      <nav role="navigation" aria-label="Main navigation">
+
+        <a href="index.html" class="lang-btn active">English</a>
+        <a href="index-ar.html" class="lang-btn ">العربية</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="site" id="home">
+    <!-- HERO -->
+    <section class="hero" aria-label="Hero">
+      <div class="hero-left">
+        <h2>Young Inventor</h2>
+        <p>Hands-on STEM experiences and creative projects that empower children to explore, experiment and invent. Suitable for ages 6–12.</p>
+        <button class="cta" id="ctaBtn">Discover More</button>
+      </div>
+      <div class="hero-illus" aria-hidden="true">
+        <!-- Replace with your 2.5D illustration PNG/SVG -->
+        <img src="piic/pic1-homepage.png" alt="Children doing experiments illustration">
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+      <div class="text">
+        <h3>About</h3>
+        <p>Young Inventor is an educational platform that empowers children with the skills and creativity they need to become innovative thinkers. We combine hands-on kits, guided lessons, and mentorship to make learning STEM joyful and deeply memorable.</p>
+      </div>
+      <div class="illus">
+        <img src="piic/pic2-homepage.png" alt="girl holding gear" style="max-width:100%;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.06); transition: transform 0.5s ease, box-shadow 0.5s ease;">
+      </div>
+    </section>
+
+    <!-- VISION & GOALS -->
+    <section id="vision">
+      <h3 style="font-size:32px;color:#9cca3f;margin:6px 0 18px">Our Vision & Goals</h3>
+      <div class="vision">
+        <div class="card">
+          <div style="font-size:34px;margin-bottom:10px"><img src="piic/pic3-homepage.png" alt=""></div>
+          <h4>Our Vision</h4>
+          <p>To inspire and equip children to be curious, creative, and problem solvers — ready to shape a better future.</p>
+        </div>
+        <div class="card">
+          <div style="font-size:34px;margin-bottom:10px"><img src="piic/pic4-homepage.png" alt=""></div>
+          <h4>Our Goals</h4>
+          <p>Foster a lifelong love of learning and innovation through playful projects, guided discovery, and community challenges.</p>
+        </div>
+        <div class="card">
+          <div style="font-size:34px;margin-bottom:10px"><img src="piic/pic5-homepage.png" alt=""></div>
+          <h4>How We Do It</h4>
+          <p>By combining curriculum-aligned lessons, hands-on kits, and online support for parents and educators.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT (simple footer area) -->
+    <footer id="contact">
+      <div class="site" style="padding:24px 48px 48px">
+        <div class="footer-inner">
+          <div>
+            <strong>Contact</strong>
+            <div class="muted">khaled.ahmad.hasan@gmail.com</div>
+          </div>
+          <div class="socials" aria-hidden="false">
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="Instagram">ig</a>
+            <a href="#" aria-label="Twitter">t</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Create animated background elements
+
+
+    // CTA loading state
+    const cta = document.getElementById('ctaBtn');
+    cta.addEventListener('click', function(){
+      cta.classList.add('loading');
+      const prev = cta.textContent;
+      cta.textContent = 'Loading...';
+      setTimeout(()=>{
+        cta.textContent = prev;
+        cta.classList.remove('loading');
+        // smooth scroll to about
+        document.getElementById('about').scrollIntoView({behavior:'smooth'});
+      },900);
+    });
+
+    // Simple form validation placeholder (if you add a form later)
+    function validateForm(form){
+      const inputs = form.querySelectorAll('[required]');
+      let ok = true;
+      inputs.forEach(i=>{ if(!i.value.trim()){ i.style.outline='2px solid #FF6B35'; ok=false;} else { i.style.outline='none'; }});
+      return ok;
+    }
+  </script>
+</body>
+</html>
